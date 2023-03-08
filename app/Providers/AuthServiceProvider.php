@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
@@ -16,11 +18,9 @@ class AuthServiceProvider extends ServiceProvider
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
     ];
 
-    /**
-     * Register any authentication / authorization services.
-     */
+    /** Register any authentication / authorization services. */
     public function boot(): void
     {
-        //
+
     }
 }
