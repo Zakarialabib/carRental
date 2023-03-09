@@ -23,7 +23,7 @@ class SectionFactory extends Factory
         return [
             'title' => 'section',
             'description' => 'description',
-            'image' =>'img.jpg',
+            'image' => fake()->imageUrl(640, 480, 'animals', true),
             'link' =>'#',
             'type' => SectionType::CARS,
         ];
