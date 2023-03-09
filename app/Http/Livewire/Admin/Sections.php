@@ -11,7 +11,7 @@ use App\Models\Section;
 class Sections extends Component
 {
     use WithPagination;
-    
+
     public $createSectionModal = false;
     public $editSectionModal = false;
 
@@ -22,7 +22,7 @@ class Sections extends Component
 
     public function store()
     {
-        //
+
     }
 
     public function editSectionModal()
@@ -32,17 +32,17 @@ class Sections extends Component
 
     public function update()
     {
-        //
+
     }
-    
+
     public function delete()
     {
-        //
+
     }
 
     public function getSectionsProperty()
     {
-     return Section::query()->paginate();
+        return Section::query()->paginate();
     }
 
     public function render()

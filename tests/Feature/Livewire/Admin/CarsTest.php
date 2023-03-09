@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Livewire\Admin\Cars;
 use App\Models\User;
 
@@ -13,8 +15,6 @@ test('cars component is working', function () {
     $response->assertOk();
 });
 
-
-
 it('test cars list if can be rendred', function () {
     $this->withoutExceptionHandling();
     // $this->loginAsAdmin();
@@ -23,4 +23,3 @@ it('test cars list if can be rendred', function () {
         ->assertOk()
         ->assertViewIs('livewire.admin.cars');
 });
-

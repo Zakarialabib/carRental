@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use App\Providers\RouteServiceProvider;
-use App\Enums\RoleType;
 
 test('registration screen can be rendered', function () {
     $response = $this->get('/register');

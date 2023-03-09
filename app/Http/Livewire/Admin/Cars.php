@@ -7,10 +7,11 @@ namespace App\Http\Livewire\Admin;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Car;
+
 class Cars extends Component
 {
     use WithPagination;
-    
+
     public $createCarModal = false;
     public $editCarModal = false;
 
@@ -21,7 +22,7 @@ class Cars extends Component
 
     public function store()
     {
-        //
+
     }
 
     public function editCarModal()
@@ -31,12 +32,12 @@ class Cars extends Component
 
     public function update()
     {
-        //
+
     }
-    
+
     public function delete()
     {
-        //
+
     }
 
     public function getCarsProperty()

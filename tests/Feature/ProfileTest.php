@@ -23,7 +23,7 @@ test('profile information can be updated', function () {
             'name'  => 'Test User',
             'email' => 'test@example.com',
             'phone' => '0522000000',
-            'role'  =>  'client',
+            'role'  => 'client',
         ]);
 
     $response

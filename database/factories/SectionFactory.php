@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Enums\SectionType;
 
 /**
@@ -21,11 +20,11 @@ class SectionFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => 'section',
+            'title'       => 'section',
             'description' => 'description',
-            'image' =>'img.jpg',
-            'link' =>'#',
-            'type' => SectionType::CARS,
+            'image'       => 'img.jpg',
+            'link'        => '#',
+            'type'        => SectionType::CARS,
         ];
     }
 }
