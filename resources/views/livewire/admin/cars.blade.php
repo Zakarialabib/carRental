@@ -1,5 +1,9 @@
 <div>
-
+ <div class="py-4 float-right">
+    <x-button wire:click="createCarModal" primary type="button">
+                   create
+    </x-button>
+    </div>
     <div>
         <x-table>
             <x-slot name="thead">
