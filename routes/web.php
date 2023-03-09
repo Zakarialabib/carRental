@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\Admin\SectionsController;
+use App\Http\Controllers\Admin\CarsController;
+use App\Http\Controllers\Admin\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +27,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/sections', SectionsController::class)->name('sections.index');
+    Route::get('/cars', CarsController::class)->name('cars.index');
+    Route::get('/users', UsersController::class)->name('users.index');
+    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
