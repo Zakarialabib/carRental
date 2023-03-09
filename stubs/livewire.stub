@@ -1,0 +1,51 @@
+<?php
+
+declare(strict_types=1);
+
+namespace [namespace];
+
+use Livewire\Component;
+use Livewire\WithPagination;
+
+class [class] extends Component
+{
+    use WithPagination;
+    
+    public $create[class]Modal = false;
+    public $edit[class]Modal = false;
+
+    public function create[class]Modal()
+    {
+        $this->create[class]Modal = true;
+    }
+
+    public function store()
+    {
+        //
+    }
+
+    public function edit[class]Modal()
+    {
+        $this->edit[class]Modal = false;
+    }
+
+    public function update()
+    {
+        //
+    }
+    
+    public function delete()
+    {
+        //
+    }
+
+    public function get[class]Property()
+    {
+    //  return [class]::query()->paginate();
+    }
+
+    public function render()
+    {
+        return view('[view]');
+    }
+}
