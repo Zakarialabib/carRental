@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Auth;
 
+use App\Enums\RoleType;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -33,12 +34,15 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name'     => ['required', 'string', 'max:255'],
             'email'    => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'phone'    => ['required', 'numeric', 'min:5', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name'     => $request->name,
             'email'    => $request->email,
+            'phone'    => $request->phone,
+            'role'    => RoleType::CLIENT,
             'password' => Hash::make($request->password),
         ]);
 

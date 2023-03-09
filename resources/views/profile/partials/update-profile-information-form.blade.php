@@ -22,7 +22,11 @@
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
-
+        <div>
+            <x-input-label for="phone" :value="__('Phone')" />
+            <x-text-input id="phone" name="phone" type="numeric" class="mt-1 block w-full" :value="old('phone', $user->phone)" required autofocus autocomplete="phone" />
+            <x-input-error class="mt-2" :messages="$errors->get('phone')" />
+        </div>
         <div>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
@@ -45,6 +49,16 @@
                     @endif
                 </div>
             @endif
+        </div>
+
+        <div>
+            <x-input-label for="role" :value="__('Role Type')" />
+            <select class="w-full" id="role" name="role">
+                @foreach(App\Enums\RoleType::values() as $key=>$value)
+                <option value="{{ $key }}">{{ $value }}</option>
+                @endforeach
+            </select>
+            <x-input-error :messages="$errors->get('type')" class="mt-2" />
         </div>
 
         <div class="flex items-center gap-4">

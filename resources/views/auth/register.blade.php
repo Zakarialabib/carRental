@@ -15,20 +15,13 @@
             <x-text-input id="phone" class="block mt-1 w-full" type="number" name="phone" :value="old('phone')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('phone')" class="mt-2" />
         </div>
+        
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <select class="w-full" id="type" name="type">
-                @foreach(App\Enums\RoleType::values() as $key=>$value)
-                <option value="{{ $key }}">{{ $value }}</option>
-                @endforeach
-            </select>
-            <x-input-error :messages="$errors->get('type')" class="mt-2" />
-        </div>
+        
         
         <!-- Password -->
         <div class="mt-4">
