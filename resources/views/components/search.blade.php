@@ -20,8 +20,8 @@
             <ul>
                 @forelse ($results as $product)
                     <li class="flex items-center px-4 py-3 border-b border-gray-100">
-                        <a href="{{ route('front.product', $product->slug) }}" class="flex">
-                            <img src="{{ asset('images/products/' . $product->image) }}" alt="" loading="lazy"
+                        <a href="#" class="flex">
+                            <img src="#" alt="" loading="lazy"
                                 class="w-10 h-10 object-cover">
                             <div class="mx-4">
                                 <p class="font-semibold text-gray-700">{{ $product->name }}</p>

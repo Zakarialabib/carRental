@@ -30,13 +30,10 @@
                 </x-slot>
 
                 <x-slot name="content">
-                    <x-dropdown-link :href="route('admin.settings')">
-                        {{ __('Settings') }}
+                    <x-dropdown-link :href="#">
+                       //
                     </x-dropdown-link>
 
-                    <x-dropdown-link>
-                        @livewire('admin.cache')
-                    </x-dropdown-link>
 
                     <div class="border-t border-gray-100"></div>
 
