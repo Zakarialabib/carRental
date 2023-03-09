@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\Admin\SectionsController;
 use App\Http\Controllers\Admin\CarsController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,13 +26,10 @@ Route::get('/', FrontController::class)->name('front.index');
 
 // Admin Controllers
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', DashboardController::class)->name('dashboard');
     Route::get('/sections', SectionsController::class)->name('sections.index');
     Route::get('/cars', CarsController::class)->name('cars.index');
     Route::get('/users', UsersController::class)->name('users.index');
-    
 });
 
 // Client Controllers
