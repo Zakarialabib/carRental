@@ -7,11 +7,10 @@ use App\Models\Section;
 use Livewire\Component;
 class Index extends Component
 {
-
     public function getSectionsProperty()
     {
         return Section::query()
-                        ->where('type', PageType::HOME)
+                        ->whereType(PageType::HOME)
                         ->get();
     }
 

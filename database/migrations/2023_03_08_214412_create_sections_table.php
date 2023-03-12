@@ -14,11 +14,19 @@ return new class extends Migration
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
-            $table->string('image');
-            $table->string('link');
-            $table->string('type');
+            $table->string('image')->nullable();
+            $table->string('featured_title')->nullable();
+            $table->string('subtitle')->nullable();
+            $table->string('label')->nullable();
+            $table->string('link')->nullable();
+            $table->text('description')->nullable();
             $table->boolean('status')->default(true);
+            $table->string('bg_color')->nullable();
+            $table->string('text_color')->nullable();
+            $table->boolean('is_car')->default(false);
+            $table->boolean('is_form')->default(false);
+            $table->text('embeded_video')->nullable();
+            $table->string('type');
             $table->timestamps();
         });
     }
