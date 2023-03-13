@@ -13,7 +13,16 @@ return new class extends Migration
     {
         Schema::create('availabilities', function (Blueprint $table) {
             $table->id();
-            $table->bolean('status')->default(true);
+            $table->string('price');
+            $table->date('start_date');
+            $table->time('pickup_time');
+            $table->date('end_date');
+            $table->time('dropoff_time');
+            $table->string('location')->nullable();
+            $table->string('description')->nullable();
+            $table->foreignId('car_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

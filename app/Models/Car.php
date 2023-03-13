@@ -35,4 +35,9 @@ class Car extends Model
     protected $casts = [
         'status' => Status::class,
     ];
+
+    public function availability()
+    {
+        return $this->hasMany(Availability::class);
+    }
 }
