@@ -24,3 +24,4 @@ Homestead.json
 bootstrap/app.php
 public/build/manifest.json
 composer.lock
+composer.lock
