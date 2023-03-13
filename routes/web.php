@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\Admin\SectionsController;
+use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\CarsController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UsersController;
@@ -30,6 +31,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     Route::get('/sections', SectionsController::class)->name('sections.index');
     Route::get('/cars', CarsController::class)->name('cars.index');
     Route::get('/users', UsersController::class)->name('users.index');
+    Route::get('/pages', PagesController::class)->name('pages.index');
 });
 
 // Client Controllers
