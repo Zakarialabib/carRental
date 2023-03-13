@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\CarsController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     Route::get('/cars', CarsController::class)->name('cars.index');
     Route::get('/users', UsersController::class)->name('users.index');
     Route::get('/pages', PagesController::class)->name('pages.index');
+    Route::get('/settings', SettingsController::class)->name('settings.index');
 });
 
 // Client Controllers
