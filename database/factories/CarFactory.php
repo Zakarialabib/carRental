@@ -20,7 +20,7 @@ class CarFactory extends Factory
     {
         return [
             'name' => 'Dacia',
-            'image' => 'dacia.png',
+            'image' => fake()->imageUrl(640, 480, 'animals', true),
             'description' => 'DACIA SUPERCAR',
             'brand' => 'DACIATANGER',
             'model' => 'LOGAN - 2023',

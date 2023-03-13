@@ -11,7 +11,7 @@ class CarCards extends Component
     use WithPagination;
     public function getCarsProperty()
     {
-        return Car::select('id','name','model')->paginate(5);
+        return Car::select('id','name','model','image')->paginate(5);
     }
     public function render()
     {

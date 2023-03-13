@@ -12,6 +12,6 @@ class FrontController extends Controller
     public function __invoke(Request $request)
     {
         // return view('front.index');
-        return view('welcome');
+        return view('front.index');
     }
 }
