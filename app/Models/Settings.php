@@ -16,6 +16,11 @@ class Settings extends Model
         'value',
     ];
 
+    public static function get($key)
+    {
+        return self::where('key', $key)->value('value'); 
+    }
+
     public static function set($key, $value)
     {
         $setting = self::where('key', $key)->first();
