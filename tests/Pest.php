@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 /*
@@ -32,6 +33,16 @@ uses(Tests\TestCase::class, RefreshDatabase::class)
 expect()->extend('toBeOne', function () {
     return $this->toBe(1);
 });
+
+/**
+ * Set the currently logged in user for the application.
+ *
+ * @return TestCase
+ */
+function actingAs(Authenticatable $user, string $driver = null)
+{
+    return test()->actingAs($user, $driver);
+}
 
 /*
 |--------------------------------------------------------------------------
