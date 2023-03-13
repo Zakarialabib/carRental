@@ -11,6 +11,6 @@ class SettingsController extends Controller
      */
     public function __invoke()
     {
-        return view('admin.settings');
+        return view('admin.settings.index');
     }
 }
