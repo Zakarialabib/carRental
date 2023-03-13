@@ -1,9 +1,13 @@
 <div>
- <div class="py-4 float-right">
-    <x-button wire:click="createCarModal" primary type="button">
-                   create
-    </x-button>
+    <div class="py-4 flex justify-between">
+        
+        <x-alert />
+
+        <x-button wire:click="createModal" primary type="button">
+        create
+        </x-button>
     </div>
+
     <div>
         <x-table>
             <x-slot name="thead">
@@ -27,7 +31,7 @@
                     {{ $collection->name }}
                     </x-table.td>
                     <x-table.td>
-                        <x-button wire:click="edit{{ $collection->id }}" secondary>
+                        <x-button wire:click="editModal{{ $collection->id }}" secondary>
                             edit
                         </x-button>
                         <x-button wire:click="delete{{ $collection->id }}" danger>
@@ -37,15 +41,15 @@
                 </x-table.tr>
                 @empty
                     no data
-                    @endforelse
+                @endforelse
                 </x-table.tbody>
             </x-table>
-        </div>
+    </div>
 
 
-        <x-modal wire:model="">
+        <x-modal wire:model="createModal">
             <x-slot name="title">
-                create
+                create car
             </x-slot>
             <x-slot name="content">
                 // error handling
@@ -58,9 +62,9 @@
             </x-slot>
         </x-modal>
 
-        <x-modal wire:model="">
+        <x-modal wire:model="editModal">
             <x-slot name="title">
-                update
+                update car
             </x-slot>
             <x-slot name="content">
                 // error handling

@@ -1,7 +1,9 @@
 <div>
-    <div class="py-4 float-right">
-        <x-button wire:click="createPageModal" primary type="button">
-            create
+    <div class="py-4 flex justify-between">
+        
+        <x-alert />
+        <x-button wire:click="createModal" primary type="button">
+            create page
         </x-button>
     </div>
     <div>
@@ -43,9 +45,9 @@
     </div>
 
 
-    <x-modal wire:model="createPageModal">
+    <x-modal wire:model="createModal">
         <x-slot name="title">
-            create
+            create page
         </x-slot>
         <x-slot name="content">
             // error handling
@@ -58,9 +60,9 @@
         </x-slot>
     </x-modal>
 
-    <x-modal wire:model="editPageModal">
+    <x-modal wire:model="editModal">
         <x-slot name="title">
-            update
+            update page
         </x-slot>
         <x-slot name="content">
             // error handling

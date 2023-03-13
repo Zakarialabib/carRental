@@ -1,7 +1,7 @@
 <div>
  <div class="py-4 float-right">
-    <x-button wire:click="createUserModal" primary type="button">
-                   create
+    <x-button wire:click="createModal" primary type="button">
+                   create user
     </x-button>
     </div>
     <div>
@@ -27,7 +27,7 @@
                     {{ $collection->name }}
                     </x-table.td>
                         <x-table.td>
-                            <x-button wire:click="edit{{ $collection->id }}" secondary>
+                            <x-button wire:click="editModal{{ $collection->id }}" secondary>
                                 edit
                             </x-button>
                             <x-button wire:click="delete{{ $collection->id }}" danger>
@@ -43,7 +43,7 @@
     </div>
 
 
-    <x-modal wire:model="">
+    <x-modal wire:model="createModal">
         <x-slot name="title">
             create
         </x-slot>
@@ -58,7 +58,7 @@
         </x-slot>
     </x-modal>
 
-    <x-modal wire:model="">
+    <x-modal wire:model="editModal">
         <x-slot name="title">
             update
         </x-slot>
