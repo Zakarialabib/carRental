@@ -18,10 +18,10 @@ return new class extends Migration
             $table->time('pickup_time');
             $table->date('end_date');
             $table->time('dropoff_time');
-            $table->string('location')->nullable();
             $table->string('description')->nullable();
-            $table->foreignId('car_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId(Location::class)->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId(User::class)->constrained()->cascadeOnDelete();
+            $table->foreignId(Car::class)->constrained()->cascadeOnDelete();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

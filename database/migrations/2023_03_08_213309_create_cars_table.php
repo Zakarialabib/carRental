@@ -14,10 +14,11 @@ return new class () extends Migration {
             $table->id();
             $table->string('name');
             $table->string('image');
-            $table->string('description');
-            $table->string('brand');
-            $table->string('model');
-            $table->string('seats');
+            $table->string('gallery')->nullable();
+            $table->string('description')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('model')->nullable();
+            $table->string('seats')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

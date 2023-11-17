@@ -25,6 +25,8 @@ use Illuminate\Support\Facades\Route;
 
 // Front Controllers
 Route::get('/', FrontController::class)->name('front.index');
+Route::get('/',[CarController::class, 'index'])->name('car.search'); 
+Route::get('/{slug}', [CarController::class,'detail'])->name('car.detail');
 
 // Admin Controllers
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
