@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Enums\Status;
 use App\Enums\SectionType;
+
 class Section extends Model
 {
     use HasFactory;
@@ -17,9 +18,16 @@ class Section extends Model
      */
     protected $fillable = [
         'title',
-        'description',
         'image',
+        'featured_title',
+        'subtitle',
+        'label',
         'link',
+        'description',
+        'bg_color',
+        'text_color',
+        'is_car',
+        'is_form',
         'type',
         'status',
     ];
