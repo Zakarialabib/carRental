@@ -22,6 +22,11 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('admin.pages.index')" :active="request()->routeIs('admin.pages.index')">
+                        {{ __('Pages') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('admin.cars.index')" :active="request()->routeIs('admin.cars.index')">
                         {{ __('Cars') }}
                     </x-nav-link>
@@ -29,6 +34,10 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.index')">
                         {{ __('Users') }}
+                    </x-nav-link>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('admin.settings.index')" :active="request()->routeIs('admin.settings.index')">
+                        {{ __('Settings') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -86,13 +95,19 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.sections.index')" :active="request()->routeIs('admin.sections.index')">
-                {{ __('Dashboard') }}
+                {{ __('Sections') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.pages.index')" :active="request()->routeIs('admin.pages.index')">
+                {{ __('Pages') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.cars.index')" :active="request()->routeIs('admin.cars.index')">
-                {{ __('Dashboard') }}
+                {{ __('Cars') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.index')">
-                {{ __('Dashboard') }}
+                {{ __('Users') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.settings.index')" :active="request()->routeIs('admin.settings.index')">
+                {{ __('Settings') }}
             </x-responsive-nav-link>
         </div>
 

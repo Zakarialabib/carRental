@@ -5,11 +5,12 @@ declare(strict_types=1);
 use App\Models\User;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Notification;
+use function Pest\Laravel\get;
 
 test('reset password link screen can be rendered', function () {
-    $response = $this->get('/forgot-password');
+    
+    get('/forgot-password')->assertStatus(200);
 
-    $response->assertStatus(200);
 });
 
 test('reset password link can be requested', function () {

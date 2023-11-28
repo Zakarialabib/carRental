@@ -1,6 +1,8 @@
 <div>
-    <div class="py-4 float-right">
-    <x-button wire:click="createSectionModal" primary type="button">
+    <div class="py-4 flex justify-between">
+        
+        <x-alert />
+    <x-button wire:click="createModal" primary type="button">
                    create
     </x-button>
     </div>
@@ -27,7 +29,7 @@
                         {{ $collection->title }}
                         </x-table.td>
                         <x-table.td>
-                            <x-button type="button" wire:click="editSectionModal{{ $collection->id }}" secondary>
+                            <x-button type="button" wire:click="editModal{{ $collection->id }}" secondary>
                                 edit
                             </x-button>
                             <x-button type="button" wire:click="delete{{ $collection->id }}" danger>
@@ -43,9 +45,9 @@
     </div>
 
 
-    <x-modal wire:model="createSectionModal">
+    <x-modal wire:model="createModal">
         <x-slot name="title">
-            create
+            create section
         </x-slot>
         <x-slot name="content">
             // error handling
@@ -58,9 +60,9 @@
         </x-slot>
     </x-modal>
 
-    <x-modal wire:model="editSectionModal">
+    <x-modal wire:model="editModal">
         <x-slot name="title">
-            update
+            update section
         </x-slot>
         <x-slot name="content">
             // error handling

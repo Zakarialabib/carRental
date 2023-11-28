@@ -7,10 +7,11 @@ namespace App\Http\Livewire\Admin;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\User;
+
 class Users extends Component
 {
     use WithPagination;
-    
+
     public $createUserModal = false;
     public $editUserModal = false;
 
@@ -21,7 +22,7 @@ class Users extends Component
 
     public function store()
     {
-        //
+
     }
 
     public function editUserModal()
@@ -31,17 +32,17 @@ class Users extends Component
 
     public function update()
     {
-        //
+
     }
-    
+
     public function delete()
     {
-        //
+
     }
 
     public function getUsersProperty()
     {
-     return User::query()->paginate();
+        return User::query()->paginate();
     }
 
     public function render()
